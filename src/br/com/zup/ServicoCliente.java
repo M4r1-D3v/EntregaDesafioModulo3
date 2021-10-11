@@ -47,7 +47,7 @@ public class ServicoCliente {
 
 
         }
-        throw new Exception("Cliente não cadastrado no sistema.");
+        throw new Exception("Cliente não cadastrado no sistema."); //método para imprimir a lista de clientes
     }
 
     public static void imprimirCliente() {
