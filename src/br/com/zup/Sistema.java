@@ -8,6 +8,36 @@ public class Sistema {
         System.out.println(mensagem);
         return new Scanner(System.in);
     }
+
+    public static void menu() {
+        System.out.println("\n ");
+        System.out.println("**********************************************************");
+        System.out.println("Seja bem vinde ao sistema de vendas da empresa !ReturNull!");
+        System.out.println("**********************************************************");
+        System.out.println("\n ");
+        System.out.println("---------------------------------------------------");
+        System.out.println("# Para cadastrar um cliente, digite             [1]");
+        System.out.println("---------------------------------------------------");
+        System.out.println("# Para cadastrar um vendendor, digite           [2]");
+        System.out.println("---------------------------------------------------");
+        System.out.println("# Para cadastrar uma venda, digite              [3]");
+        System.out.println("---------------------------------------------------");
+        System.out.println("# Para listar os clientes cadastrados, digite   [4]");
+        System.out.println("---------------------------------------------------");
+        System.out.println("# Para listar os vendedores cadastrados, digite [5]");
+        System.out.println("---------------------------------------------------");
+        System.out.println("# Para listar as vendas cadastradas, digite     [6]");
+        System.out.println("---------------------------------------------------");
+        System.out.println("# Para listar as compras cadastradas, digite    [7]");
+        System.out.println("---------------------------------------------------");
+        System.out.println("# Para listar as vendas de um vendedor, digite  [8]");
+        System.out.println("---------------------------------------------------");
+        System.out.println("# Para listar as compras de um cliente, digite  [9]");
+        System.out.println("---------------------------------------------------");
+        System.out.println("# Para sair do sistema, digite                 [10]");
+
+    }
+
     public static Cliente cadastrarCliente()throws Exception{   //método para receber os dados para cadastro do cliente
         System.out.println("----------------------------");
         System.out.println("Cadastrar Cliente: ");
