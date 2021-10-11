@@ -38,6 +38,17 @@ public class ServicoCliente {
 
         }
     }
+    public static Cliente procurarClienteCpf(String cpfRecebido)throws Exception{ //método para procurar o cliente pelo cpf
+        for (Cliente clienteProcurado: clientes) {
+            if (clienteProcurado.getCpf().equals(cpfRecebido)){
+                return clienteProcurado;
+            }
+
+        }
+        throw new Exception("Cliente não cadastrado no sistema.");
+    }
+
+
 
 
 }
