@@ -9,7 +9,7 @@ public class Sistema {
         return new Scanner(System.in);
     }
 
-    public static void menu() {
+    public static void menu() { //método para exibir as opções do menu
         System.out.println("\n ");
         System.out.println("**********************************************************");
         System.out.println("Seja bem vinde ao sistema de vendas da empresa !ReturNull!");
@@ -86,6 +86,65 @@ public class Sistema {
         String cpfCliente = entradaDados("Por favor, digite o cpf do cliente: ").nextLine();
         List<Venda> totalComprasCliente = ServicoVenda.pesquisarComprasClienteCpf(cpfCliente);
         return totalComprasCliente;
+    }
+
+    public static boolean executar() throws Exception {
+        boolean operarMenu = true;
+
+        while (operarMenu) {
+            menu();
+            System.out.println("---------------------------------------------------");
+            int escolhaUsuario = entradaDados("Escolha uma opção: ").nextInt();
+            if (escolhaUsuario == 1) {
+                Cliente cliente = new Cliente();
+                try {
+                    cliente = cadastrarCliente();
+                    System.out.println("\n");
+                    System.out.println("Cliente cadastrado com sucesso!");
+                }catch (Exception erro){
+                    System.out.println(erro.getMessage());
+                    cliente = cadastrarCliente();
+                }
+
+            } else if (escolhaUsuario == 2) {
+                Vendedor vendedor = new Vendedor();
+                try {
+                    vendedor = cadastrarVendedor();
+                    System.out.println("\n");
+                    System.out.println("Vendedor cadastrado com sucesso!");
+                }catch (Exception erro){
+                    System.out.println(erro.getMessage());
+                    vendedor = cadastrarVendedor();
+                }
+            } else if (escolhaUsuario == 3) {
+                Venda venda = cadastrarVenda();
+                System.out.println("\n");
+                System.out.println("Venda cadastrada com sucesso!");
+                System.out.println(venda);
+            } else if (escolhaUsuario == 4) {
+                ServicoCliente.imprimirCliente();
+            }else if (escolhaUsuario == 5){
+                ServicoVendedor.listarVendedor();
+            }else if(escolhaUsuario == 6){
+                ServicoVenda.listarVendas();
+            }else if (escolhaUsuario == 7){
+                ServicoVenda.listarCompras();
+            }else if(escolhaUsuario == 8){
+                List<Venda>totalVendas = pesquisarVendasVendedorEmail();
+                System.out.println(totalVendas);
+            }else if (escolhaUsuario == 9){
+                List<Venda>totalCompras = pesquisarComprasClienteCpf();
+                System.out.println(totalCompras);
+            }else if (escolhaUsuario == 10){
+                System.out.println("Obrigade e até a próxima!");
+                operarMenu = false;
+
+            }else {
+                System.out.println("[[Oops! Digite uma opção válida.]]");
+                System.out.println("\n \n");
+            }
+        }
+        return operarMenu;
     }
 
 }
