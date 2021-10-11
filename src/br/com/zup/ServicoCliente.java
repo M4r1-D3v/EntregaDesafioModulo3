@@ -11,6 +11,13 @@ public class ServicoCliente {
         clientes.add(cliente);
         return cliente;
     }
+    public static void verificarExistenciaCpfCliente(String cpf)throws Exception{ // método para verificar se o cliente já está cadastrado através do cpf
+        for (Cliente cpfCltVerificacao: clientes) {
+            if (cpfCltVerificacao.getCpf().equals(cpf)){
+                throw new Exception("Cpf já cadastrado no sistema");
+            }
 
+        }
+    }
 
 }
