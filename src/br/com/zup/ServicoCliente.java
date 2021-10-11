@@ -27,4 +27,14 @@ public class ServicoCliente {
         }
     }
 
+    public static void verificarExistenciaEmail(String email)throws Exception{ //método verificar se email do clt é cadastrado
+        for (Cliente emailReferenciaClt:clientes) {
+            if (emailReferenciaClt.getEmail().equals(email)){
+                throw new Exception("E-mail já cadastrado no sistema.");
+            }
+
+        }
+    }
+
+
 }
