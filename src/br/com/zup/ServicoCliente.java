@@ -30,25 +30,31 @@ public class ServicoCliente {
         }
     }
 
-    public static void verificarExistenciaEmail(String email)throws Exception{ //método verificar se email do clt é cadastrado
-        for (Cliente emailReferenciaClt:clientes) {
-            if (emailReferenciaClt.getEmail().equals(email)){
+    public static void verificarExistenciaEmail(String email) throws Exception { //método verificar se email do clt é cadastrado
+        for (Cliente emailReferenciaClt : clientes) {
+            if (emailReferenciaClt.getEmail().equals(email)) {
                 throw new Exception("E-mail já cadastrado no sistema.");
             }
 
         }
     }
-    public static Cliente procurarClienteCpf(String cpfRecebido)throws Exception{ //método para procurar o cliente pelo cpf
-        for (Cliente clienteProcurado: clientes) {
-            if (clienteProcurado.getCpf().equals(cpfRecebido)){
+
+    public static Cliente procurarClienteCpf(String cpfRecebido) throws Exception { //método para procurar o cliente pelo cpf
+        for (Cliente clienteProcurado : clientes) {
+            if (clienteProcurado.getCpf().equals(cpfRecebido)) {
                 return clienteProcurado;
             }
+
 
         }
         throw new Exception("Cliente não cadastrado no sistema.");
     }
 
-
+    public static void imprimirCliente() {
+        for (Cliente referencia : clientes) {
+            System.out.println(referencia);
+        }
+    }
 
 
 }
