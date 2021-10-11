@@ -7,7 +7,7 @@ public class Sistema {
         System.out.println(mensagem);
         return new Scanner(System.in);
     }
-    public static Cliente cadastrarCliente(){
+    public static Cliente cadastrarCliente()throws Exception{
         System.out.println("----------------------------");
         System.out.println("Cadastrar Cliente: ");
         System.out.println("----------------------------");
