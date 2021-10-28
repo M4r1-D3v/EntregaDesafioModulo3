@@ -9,7 +9,7 @@ public class ServicoCliente {
     public static Cliente cadastrarCliente(String nome, String cpf, String email, String endereco) throws Exception { //método para cadastrar um cliente
         validarEmailClt(email);
         verificarExistenciaEmail(email);
-        verificarExistenciaCpfCliente();
+        verificarExistenciaCpfCliente(cpf);
         Cliente cliente = new Cliente(nome, cpf, email, endereco);
         clientes.add(cliente);
         return cliente;
